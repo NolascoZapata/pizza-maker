@@ -11,5 +11,8 @@
   "devDependencies": {
     "node": "^16.17.0",
     "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "sweetalert2": "^11.4.29"
   }
 }

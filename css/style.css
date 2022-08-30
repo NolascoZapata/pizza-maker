@@ -142,13 +142,13 @@ body .section2 .make-your-pizza img {
 body .section2 .make-your-pizza .pizza-box {
   display: flex;
   align-items: center;
-  background-image: url(./../img/bg-photo.jpg);
+  background-image: url("https://i.ibb.co/NF6z9LF/bg-photo.jpg");
   background-size: cover;
 }
 body .section2 .make-your-pizza .pizza-box .pizza-board {
   position: relative;
 }
-body .section2 .make-your-pizza .pizza-box .pizza-board .pizza-base {
+body .section2 .make-your-pizza .pizza-box .pizza-board .pizza-base-mass {
   width: 50%;
   position: absolute;
   left: 35%;
@@ -236,7 +236,7 @@ body .section4 form .group input:focus {
 }
 body .section4 form .group .order-list {
   color: #009246;
-  list-style-image: url("./../img/pizza-icon2.png");
+  list-style-image: url("https://i.ibb.co/RcqHjs3/pizza-icon2.png");
   list-style-position: inside;
 }
 body .section5 .descrip-img {

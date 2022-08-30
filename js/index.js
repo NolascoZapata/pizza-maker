@@ -1,135 +1,20 @@
-const stdPizzas= [
-  {
-    id:"cheesepizza",
-    name:"Cheese",
-    description : "Tomato Sauce and Mozzarella Cheese",
-    img_src: "./img/std-pizza/cheese-sm.png",
-    price: 7
-  },
-  {
-    id:"hamcheese",
-    name:"Ham and Chesse",
-    description : "Tomato Sauce , Mozzarella Cheese and Ham",
-    img_src: "./img/std-pizza/ham-cheese-sm.png",
-    price: 8 
-  },
-  {
-    id:"peppcheese",
-    name:"Pepperoni and Chesse",
-    description : "Tomato Sauce , Mozzarella Cheese and Pepperoni",
-    img_src: "./img/std-pizza/pepperoni-pizza-sm.png",
-    price: 8.5
-  },{
-    id:"hawaiian",
-    name:"Hawaiian",
-    description : "Tomato Sauce , Mozzarella Cheese and Pineapple",
-    img_src: "./img/std-pizza/hawaiian-pizza-sm.png",
-    price: 9.25
-  }
-]
-const base= [
-  {
-    id: "sauce",
-    name: "Sauce",
-    img_src: "./img/tomato-sauce.png",
-    price: 2.5,
-  },
-  {
-    id: 'cheese',
-    name: "Cheese",
-    img_src: "./img/cheese.png",
-    price: 2.5,
-  }
+let stdPizzas=[]
+let extras=[]
+let toppings=[]
+let base=[]
 
-]
-const toppings = [
-  {
-    id: "olivg",
-    name: "Green olive",
-    img_src: "./img/toppings/olives-g.png",
-    price: 0.5,
-  },
-  {
-    id: "olivd",
-    name: "Dark olive",
-    img_src: "./img/toppings/olives-d.png",
-    price: 0.5,
-  },
-  {
-    id: "tomato",
-    name: "Tomato slices",
-    img_src: "./img/toppings/tomato.png",
-    price: 0.5,
-  },
-  {
-    id: "onion",
-    name: "Onion",
-    img_src: "./img/toppings/onion.png",
-    price: 0.5,
-  },
-  {
-    id: "bacon",
-    name: "Bacon",
-    img_src: "./img/toppings/bacon.png",
-    price: 2,
-  },
-  {
-    id: "ham",
-    name: "Ham",
-    img_src: "./img/toppings/ham.png",
-    price: 1,
-  },
-  {
-    id: "pineapple",
-    name: "Pineapple",
-    img_src: "./img/toppings/pineapple.png",
-    price: 1.25,
-  },
-  {
-    id: "pepperoni",
-    name: "Pepperoni",
-    img_src: "./img/toppings/pepperoni.png",
-    price: 1.5,
-  }
-]
-const extras = [
-  {
-    id: "xtomato",
-    name: "Extra Tomato slices",
-    img_src: "./img/toppings/x-tomato.png",
-    price: 0.5,
-  },
-  {
-    id: "xonion",
-    name: "Extra Onion",
-    img_src: "./img/toppings/x-onion.png",
-    price: 0.5,
-  },
-  {
-    id: "xbacon",
-    name: "Extra Bacon",
-    img_src: "./img/toppings/x-bacon.png",
-    price: 0.5,
-  },
-  {
-    id: "xham",
-    name: "Extra Ham",
-    img_src: "./img/toppings/x-ham.png",
-    price: 0.5,
-  },
-  {
-    id: "xpineapple",
-    name: "Extra Pineapple",
-    img_src: "./img/toppings/x-pineapple.png",
-    price: 2,
-  },
-  {
-    id: "xpepperoni",
-    name: "Extra Pepperoni",
-    img_src: "./img/toppings/x-pepperoni.png",
-    price: 1,
-  }
-]
+const loadPage = async()=>{
+  let response = await fetch(`./../db.json`);
+  let data= await response.json();
+  base=[...data[0]] 
+  extras=[...data[1]]
+  stdPizzas=[...data[2]]
+  toppings=[...data[3]]
+  loadCards()
+  loadMakePizzaElements()
+}
+
+loadPage()
 
 
 let userPizza=[];
@@ -140,6 +25,7 @@ let cart = [];
 let userPizzaCounter = 0;
 let total = 0
 document.getElementById('cartTotal').innerHTML = `$${total}`
+
 if (cart.length===0) {
   document.getElementById('cart').innerHTML = `<p>No items added yet</p>`
 }
@@ -176,6 +62,69 @@ function loadCards(){
   
   }
   stdPizzBox.innerHTML = htmlCards
+
+  // List AddToCartBtn
+  document.querySelectorAll('#addToCartBtn').forEach(item => {
+  item.onclick = function(){
+    let itemToAdd = stdPizzas.find(pizza => pizza.id === item.parentElement.parentElement.id);
+    let prodToAdd
+    if (itemToAdd===undefined) {
+      
+      let userToppingPizza = []
+      userPizza.forEach(el=> userToppingPizza.push(el.name));
+      prodToAdd= {
+        name:`User's Pizza #${++userPizzaCounter} (${userToppingPizza}) `,
+        price: totalNewPizza,
+        quantity: 1,
+      }
+    }else{
+      
+      prodToAdd = {
+                      name:itemToAdd.name,
+                      price: itemToAdd.price,
+                      quantity: 1
+                    }
+    
+    }
+    if (cart.find(prod=>prod.name===prodToAdd.name) === undefined){
+      cart.push(prodToAdd)
+    }else{
+      ++cart.find(prod=>prod.name===prodToAdd.name).quantity
+    }
+    swal({
+      title: `Pizza added to cart!`,
+      icon: "success",
+    });
+    loadCartAndOrderList()
+  }
+})
+}
+
+function loadMakePizzaElements() {
+  let pizzaBoard= document.getElementById('pizzaBoard')
+  let elements = ''
+  for (let i = 0; i < base.length; i++) {
+    let b = base[i];
+    let htmlBase = `
+                <img src=${b.img_src} alt="${b.name}-img" id="img-${b.id}" class="pizza-base-${b.id}">
+                  `
+    elements+=htmlBase;
+  }
+  for (let i = 0; i < toppings.length; i++) {
+    let top = toppings[i];
+    let htmlTopp = `
+                <img src=${top.img_src} alt="${top.name}-img" id="img-${top.id}"  class="pizza-topping">
+                  `
+    elements+=htmlTopp;
+  }
+  for (let i = 0; i < extras.length; i++) {
+    let ext = extras[i];
+    let htmlExtr = `
+                <img src=${ext.img_src} alt="${ext.name}-img" id="img-${ext.id}" class="pizza-extra">
+                  `
+    elements+=htmlExtr;
+  }
+  pizzaBoard.innerHTML=elements
 }
 
 function udapteNewPizzaValue() {
@@ -198,8 +147,6 @@ addToppCheck.forEach(item => {
         selectedItem=base.find(base => item.id === base.id)
         if (selectedItem===undefined){
           selectedItem=extras.find(extra => item.id === extra.id)
-
-
         }
       }
       userPizza.push(selectedItem)
@@ -291,41 +238,6 @@ function loadCartAndOrderList() {
   )
 }
 
-loadCards()
-
-let addToCartBtn = document.querySelectorAll('#addToCartBtn')
-addToCartBtn.forEach(item => {
-  item.onclick = function(){
-    
-    let itemToAdd = stdPizzas.find(pizza => pizza.id === item.parentElement.parentElement.id);
-    let prodToAdd
-    if (itemToAdd===undefined) {
-      
-      let userToppingPizza = []
-      userPizza.forEach(el=> userToppingPizza.push(el.name));
-      prodToAdd= {
-        name:`User's Pizza #${++userPizzaCounter} (${userToppingPizza}) `,
-        price: totalNewPizza,
-        quantity: 1,
-      }
-      
-    }else{
-      
-      prodToAdd = {
-                      name:itemToAdd.name,
-                      price: itemToAdd.price,
-                      quantity: 1
-                    }
-    }
-    if (cart.find(prod=>prod.name===prodToAdd.name) === undefined){
-      cart.push(prodToAdd)
-    }else{
-      ++cart.find(prod=>prod.name===prodToAdd.name).quantity
-    }
-    loadCartAndOrderList()
-  }
-})
-
 const buyBtn = document.getElementById('buyBtn')
 buyBtn.addEventListener('click',(e) =>{
   
@@ -349,8 +261,6 @@ buyBtn.addEventListener('click',(e) =>{
   }
 })
 
-
-
 function sendOrder() {
   userPizza=[];
   toppingsValue = 0;
@@ -363,7 +273,6 @@ function sendOrder() {
   udapteNewPizzaValue()
   loadCartAndOrderList()
 }
-
 
 
 

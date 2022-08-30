@@ -1,0 +1,411 @@
+* {
+  margin: 1px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+
+  header {
+
+    .navbar-light {
+      .navbar-brand {
+        img {
+          width: 100px;
+        }
+      }
+
+      .navbar-nav {
+        .nav-link {
+          font-family: 'Dancing Script', cursive;
+          font-size: 30px;
+          color: #009246;
+          margin: 0px 15px;
+
+          &:hover {
+            color: #ce2b37;
+          }
+
+          @media screen and (max-width:576px) {
+            font-size: 15px;
+            
+          }
+        }
+
+      }
+    }
+  }
+
+  h1 {
+    color: #009246;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    font-size: 50px;
+  }
+
+  section {
+    .section-divider {
+      background-color: #ce2b37;
+      color: #ffff;
+      text-align: center;
+      padding: 20px;
+      margin: 20px 0px;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    p,
+    label {
+      color: #009246;
+    }
+  }
+
+  .button-horiz {
+    padding: 10px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #ffffff;
+    z-index: 1;
+    background: #ce2b37;
+    position: relative;
+    font-weight: bold;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms;
+    overflow: hidden;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+      border-radius: 15px;
+      background-color: #009246;
+      z-index: -1;
+      -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+      box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+      transition: all 250ms
+    }
+
+    &:hover {
+      color: #e8e8e8;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+  }
+
+  .add-to-cart-btn {
+    outline: 0;
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 140px;
+    height: 40px;
+    border-radius: 15px;
+    overflow: hidden;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+
+    &:hover {
+      div {
+        transform: translateY(-50px);
+      }
+    }
+
+    div {
+      width: 100%;
+      transition: 0.6s cubic-bezier(.16, 1, .3, 1);
+
+      &:nth-child(1) {
+        background-color: #ce2b37;
+      }
+
+      &:nth-child(2) {
+        background-color: #009246
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        padding: 0.75em 1.125em;
+
+        p {
+          font-weight: bold;
+          color: #ffffff;
+
+        }
+
+        i {
+          font-size: 30px;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+  .section1 {
+    .standard-pizzas-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+
+      @media screen and (max-width:768px) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+  }
+
+
+
+  .section2 {
+
+    .make-your-pizza {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+
+      img {
+        width: 90%;
+        max-width: width;
+      }
+
+      @media screen and (max-width:768px) {
+        grid-template-columns: 1fr;
+
+        .pizza-board {
+          max-width: 90%;
+        }
+      }
+
+
+      .pizza-box {
+        display: flex;
+        align-items: center;
+        background-image: url(./../img/bg-photo.jpg);
+        background-size: cover;
+
+        .pizza-board {
+          position: relative;
+
+          .pizza-base {
+            width: 50%;
+            position: absolute;
+            left: 35%;
+            top: 10%;
+          }
+
+          .pizza-base-sauce,
+          .pizza-base-cheese {
+            position: absolute;
+            width: 50%;
+            left: 35%;
+            top: 10%;
+            opacity: 0;
+          }
+
+          .pizza-topping {
+            width: 50%;
+            position: absolute;
+            left: 35%;
+            top: 10%;
+            opacity: 0;
+          }
+
+          .pizza-extra {
+            width: 50%;
+            position: absolute;
+            left: 37%;
+            top: 5%;
+            opacity: 0;
+          }
+        }
+      }
+
+      .toppings-box {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+
+        @media screen and (max-width:768px) {
+          align-items: center;
+          margin-top: 35px;
+        }
+
+        ul {
+          margin: 10px 20px;
+
+          li {
+            list-style: none;
+
+            .checkbox {
+              accent-color: #ce2b37;
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+  .section3 {
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+
+      table {
+        width: 75%;
+
+        @media screen and (max-width:768px) {
+          width: 90%;
+        }
+
+        @media screen and (max-width:576px) {
+          width: 98%;
+          font-size: 90%;
+        }
+
+        .cart-tbody {
+          color: #009246;
+
+          td {
+            label {
+              margin: 0px 15px;
+            }
+
+            .delete-item-btn,
+            button {
+              border: none;
+              background: none;
+            }
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+  .section4 {
+
+    form {
+      .group {
+        input {
+          border: none;
+          border-bottom: solid 2px #009246;
+          color: #009246;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .order-list {
+          color: #009246;
+          list-style-image: url('./../img/pizza-icon2.png');
+          list-style-position: inside;
+        }
+
+      }
+    }
+  }
+
+  .section5 {
+
+    .descrip-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 30px;
+
+      
+      img {
+        width: 35%;
+      }
+
+      .paragraph {
+        font-size: 30px;
+        font-family: 'Dancing Script', cursive;
+        color: #000000;
+        
+        margin: 0px 0px 0px 30px;
+      }
+
+      @media screen and (max-width:768px) {
+        margin: 0px 0px;
+
+        img {
+          width: 45%;
+        }
+
+        .paragraph {
+          font-size: 100%;
+          font-family: 'Dancing Script', cursive;
+          margin-left: 30px;
+          
+        }
+      }
+
+      @media screen and (max-width:576px) {
+        margin: 0px 0px;
+
+        img {
+          width: 45%;
+        }
+
+        .paragraph {
+          font-size: 80%;
+        }
+      }
+    }
+
+  }
+
+  .section6 {
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .group {
+        width: 180px;
+        margin-top: 12px;
+
+        input,
+        textarea {
+          border: none;
+          border-bottom: solid 2px #009246;
+          color: #009246;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      button {
+        margin-top: 10px;
+      }
+    }
+  }
+
+
+
+
+  //////
+
+
+
+
+}

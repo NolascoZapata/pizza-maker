@@ -1,0 +1,305 @@
+* {
+  margin: 1px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body header .navbar-light .navbar-brand img {
+  width: 100px;
+}
+body header .navbar-light .navbar-nav .nav-link {
+  font-family: "Dancing Script", cursive;
+  font-size: 30px;
+  color: #009246;
+  margin: 0px 15px;
+}
+body header .navbar-light .navbar-nav .nav-link:hover {
+  color: #ce2b37;
+}
+@media screen and (max-width: 576px) {
+  body header .navbar-light .navbar-nav .nav-link {
+    font-size: 15px;
+  }
+}
+body h1 {
+  color: #009246;
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+  font-size: 50px;
+}
+body section .section-divider {
+  background-color: #ce2b37;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin: 20px 0px;
+  font-family: "Dancing Script", cursive;
+}
+body section p,
+body section label {
+  color: #009246;
+}
+body .button-horiz {
+  padding: 10px 25px;
+  border: unset;
+  border-radius: 15px;
+  color: #ffffff;
+  z-index: 1;
+  background: #ce2b37;
+  position: relative;
+  font-weight: bold;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+  overflow: hidden;
+}
+body .button-horiz:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #009246;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
+body .button-horiz:hover {
+  color: #e8e8e8;
+}
+body .button-horiz:hover::before {
+  width: 100%;
+}
+body .add-to-cart-btn {
+  outline: 0;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 140px;
+  height: 40px;
+  border-radius: 15px;
+  overflow: hidden;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+}
+body .add-to-cart-btn:hover div {
+  transform: translateY(-50px);
+}
+body .add-to-cart-btn div {
+  width: 100%;
+  transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+body .add-to-cart-btn div:nth-child(1) {
+  background-color: #ce2b37;
+}
+body .add-to-cart-btn div:nth-child(2) {
+  background-color: #009246;
+}
+body .add-to-cart-btn div span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 0.75em 1.125em;
+}
+body .add-to-cart-btn div span p {
+  font-weight: bold;
+  color: #ffffff;
+}
+body .add-to-cart-btn div span i {
+  font-size: 30px;
+  color: #ffffff;
+}
+body .section1 .standard-pizzas-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+@media screen and (max-width: 768px) {
+  body .section1 .standard-pizzas-box {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+body .section2 .make-your-pizza {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+body .section2 .make-your-pizza img {
+  width: 90%;
+  max-width: width;
+}
+@media screen and (max-width: 768px) {
+  body .section2 .make-your-pizza {
+    grid-template-columns: 1fr;
+  }
+  body .section2 .make-your-pizza .pizza-board {
+    max-width: 90%;
+  }
+}
+body .section2 .make-your-pizza .pizza-box {
+  display: flex;
+  align-items: center;
+  background-image: url(./../img/bg-photo.jpg);
+  background-size: cover;
+}
+body .section2 .make-your-pizza .pizza-box .pizza-board {
+  position: relative;
+}
+body .section2 .make-your-pizza .pizza-box .pizza-board .pizza-base {
+  width: 50%;
+  position: absolute;
+  left: 35%;
+  top: 10%;
+}
+body .section2 .make-your-pizza .pizza-box .pizza-board .pizza-base-sauce,
+body .section2 .make-your-pizza .pizza-box .pizza-board .pizza-base-cheese {
+  position: absolute;
+  width: 50%;
+  left: 35%;
+  top: 10%;
+  opacity: 0;
+}
+body .section2 .make-your-pizza .pizza-box .pizza-board .pizza-topping {
+  width: 50%;
+  position: absolute;
+  left: 35%;
+  top: 10%;
+  opacity: 0;
+}
+body .section2 .make-your-pizza .pizza-box .pizza-board .pizza-extra {
+  width: 50%;
+  position: absolute;
+  left: 37%;
+  top: 5%;
+  opacity: 0;
+}
+body .section2 .make-your-pizza .toppings-box {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+@media screen and (max-width: 768px) {
+  body .section2 .make-your-pizza .toppings-box {
+    align-items: center;
+    margin-top: 35px;
+  }
+}
+body .section2 .make-your-pizza .toppings-box ul {
+  margin: 10px 20px;
+}
+body .section2 .make-your-pizza .toppings-box ul li {
+  list-style: none;
+}
+body .section2 .make-your-pizza .toppings-box ul li .checkbox {
+  accent-color: #ce2b37;
+}
+body .section3 div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .section3 div table {
+  width: 75%;
+}
+@media screen and (max-width: 768px) {
+  body .section3 div table {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 576px) {
+  body .section3 div table {
+    width: 98%;
+    font-size: 90%;
+  }
+}
+body .section3 div table .cart-tbody {
+  color: #009246;
+}
+body .section3 div table .cart-tbody td label {
+  margin: 0px 15px;
+}
+body .section3 div table .cart-tbody td .delete-item-btn,
+body .section3 div table .cart-tbody td button {
+  border: none;
+  background: none;
+}
+body .section4 form .group input {
+  border: none;
+  border-bottom: solid 2px #009246;
+  color: #009246;
+}
+body .section4 form .group input:focus {
+  outline: none;
+}
+body .section4 form .group .order-list {
+  color: #009246;
+  list-style-image: url("./../img/pizza-icon2.png");
+  list-style-position: inside;
+}
+body .section5 .descrip-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 30px;
+}
+body .section5 .descrip-img img {
+  width: 35%;
+}
+body .section5 .descrip-img .paragraph {
+  font-size: 30px;
+  font-family: "Dancing Script", cursive;
+  color: #000000;
+  margin: 0px 0px 0px 30px;
+}
+@media screen and (max-width: 768px) {
+  body .section5 .descrip-img {
+    margin: 0px 0px;
+  }
+  body .section5 .descrip-img img {
+    width: 45%;
+  }
+  body .section5 .descrip-img .paragraph {
+    font-size: 100%;
+    font-family: "Dancing Script", cursive;
+    margin-left: 30px;
+  }
+}
+@media screen and (max-width: 576px) {
+  body .section5 .descrip-img {
+    margin: 0px 0px;
+  }
+  body .section5 .descrip-img img {
+    width: 45%;
+  }
+  body .section5 .descrip-img .paragraph {
+    font-size: 80%;
+  }
+}
+body .section6 form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body .section6 form .group {
+  width: 180px;
+  margin-top: 12px;
+}
+body .section6 form .group input,
+body .section6 form .group textarea {
+  border: none;
+  border-bottom: solid 2px #009246;
+  color: #009246;
+}
+body .section6 form .group input:focus,
+body .section6 form .group textarea:focus {
+  outline: none;
+}
+body .section6 form button {
+  margin-top: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */

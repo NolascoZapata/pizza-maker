@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link rel="shortcut icon" href="./img/pizza-icon2.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Pizza Maker</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-light">
+      <div class="container-fluid">
+
+        <a class="navbar-brand" href="#"><img src="./img/logo.png" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#makeYourPizza">Make your pizza</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#cartSection">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#aboutUs">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contactUsSection">Conact us</a>
+            </li>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <h1>Pizza Maker</h1>
+    <!-- standard pizza section -->
+    <section class="section1">
+      <h2 class="section-divider">Standard Pizzas</h2>
+      <div class="standard-pizzas-box" id="standard-pizzas-box">
+      </div>
+    </section>
+    <!-- Make your pizza  -->
+    <section class="section2" id="makeYourPizza">
+      <h2 class="section-divider">Make your pizza</h2>
+      <div class="make-your-pizza ">
+        <div class="pizza-box ">
+          <div class="pizza-board">
+            <img src="./img/pizza-wooden-board.png" alt="">
+            <img src="./img/pizza-base.png" alt="" class="pizza-base">
+            <img src="./img/tomato-sauce.png" alt="" id="img-sauce" class="pizza-base-sauce">
+            <img src="./img/cheese.png" alt="" id="img-cheese" class="pizza-base-cheese">
+
+            <!------ Toppings ------->
+            <img src="./img/toppings/olives-g.png" alt="" id="img-olivg" class="pizza-topping">
+            <img src="./img/toppings/olives-d.png" alt="" id="img-olivd" class="pizza-topping">
+            <img src="./img/toppings/tomato.png" alt="" id="img-tomato" class="pizza-topping">
+            <img src="./img/toppings/onion.png" alt="" id="img-onion" class="pizza-topping">
+            <img src="./img/toppings/bacon.png" alt="" id="img-bacon" class="pizza-topping">
+            <img src="./img/toppings/ham.png" alt="" id="img-ham" class="pizza-topping">
+            <img src="./img/toppings/pineapple.png" alt="" id="img-pineapple" class="pizza-topping">
+            <img src="./img/toppings/pepperoni.png" alt="" id="img-pepperoni" class="pizza-topping">
+
+            <!---- Extra---->
+            <img src="./img/toppings/x-tomato.png" alt="" id="img-xtomato" class="pizza-extra">
+            <img src="./img/toppings/x-onion.png" alt="" id="img-xonion" class="pizza-extra">
+            <img src="./img/toppings/x-bacon.png" alt="" id="img-xbacon" class="pizza-extra">
+            <img src="./img/toppings/x-ham.png" alt="" id="img-xham" class="pizza-extra">
+            <img src="./img/toppings/x-pineapple.png" alt="" id="img-xpineapple" class="pizza-extra">
+            <img src="./img/toppings/x-pepperoni.png" alt="" id="img-xpepperoni" class="pizza-extra">
+          </div>
+        </div>
+        <div class="toppings-box">
+          <h3>Preferences</h3>
+          <ul>
+            <li>
+              <input type="checkbox" class="add-t-check checkbox" name="sause" id="sauce">
+              <label for="sause">Sauce</label>
+            </li>
+            <li>
+              <input type="checkbox" class="add-t-check checkbox" name="cheese" id="cheese" />
+              <label for="cheese">Cheese</label>
+            </li>
+          </ul>
+          <h3>Toppings</h3>
+          <ul>
+            <li>
+              <input type="checkbox" class="add-t-check checkbox" name="g-olive" id="olivg" />
+              <label for="olivg">Green olives</label>
+            </li>
+            <li>
+              <input type="checkbox" class="add-t-check checkbox" name="d-olive" id="olivd" />
+              <label for="olivd">Dark olives</label>
+
+            </li>
+            <li>
+              <input type="checkbox" class="add-t-check checkbox" name="tomato" id="tomato" />
+              <label for="tomato">Tomato slices</label>
+              <span>
+                <input type="checkbox" class="add-t-check checkbox" name="x-tomato" id="xtomato" />
+                <label for="xtomato">Extra Tomato slices</label>
+              </span>
+            </li>
+            <li>
+              <input type="checkbox" class="add-t-check checkbox" name="onion" id="onion" />
+              <label for="onion">Onion</label>
+              <span>
+                <input type="checkbox" class="add-t-check checkbox" name="x-onion" id="xonion" />
+                <label for="xonion">Extra Onion</label>
+              </span>
+            </li>
+            <li>
+              <input type="checkbox" class="add-t-check checkbox" name="bacon" id="bacon" />
+              <label for="bacon">Bacon</label>
+              <span>
+                <input type="checkbox" class="add-t-check checkbox" name="x-bacon" id="xbacon" />
+                <label for="xbacon">Extra Bacon</label>
+              </span>
+            </li>
+            <li>
+              <input type="checkbox" class="add-t-check checkbox" name="ham" id="ham" />
+              <label for="ham">Ham</label>
+              <span>
+                <input type="checkbox" class="add-t-check checkbox" name="x-ham" id="xham" />
+                <label for="xham">Extra Ham</label>
+              </span>
+            </li>
+            <li>
+              <input type="checkbox" class="add-t-check checkbox" name="pineapple" id="pineapple" />
+              <label for="pineapple">Pineapple</label>
+              <span>
+                <input type="checkbox" class="add-t-check checkbox" name="x-pineapple" id="xpineapple" />
+                <label for="xpineapple">Extra Pineapple</label>
+              </span>
+            </li>
+            <li>
+              <input type="checkbox" class="add-t-check checkbox" name="pepperoni" id="pepperoni" />
+              <label for="pepperoni">Pepperoni</label>
+              <span>
+                <input type="checkbox" class="add-t-check checkbox" name="x-pepperoni" id="xpepperoni" />
+                <label for="xpepperoni">Extra Pepperoni</label>
+              </span>
+            </li>
+          </ul>
+          <p>Service charge: $<span id="chargeNewPizza"></span></p>
+          </p>
+          <p>Toppings: $<span id="toppingsValue"></span></p>
+          <p>New pizza's value $<span id="newPizzaValue"></span></p>
+          <button id="addToCartBtn" class="button add-to-cart-btn">
+            <div>
+              <span>
+                <p>Add to cart</p>
+              </span>
+            </div>
+            <div>
+              <span>
+                <p><i class="bi bi-cart-plus"></i></p>
+              </span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cart section -->
+    <section class="section3" id="cartSection">
+      <h2 class="section-divider">Your Cart</h2>
+      <div>
+        <table class="cart-table table">
+          <thead>
+            <tr>
+              <th scope="col">Pizza</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Subtotal</th>
+            </tr>
+          </thead>
+          <tbody id="cart" class="cart-tbody"></tbody>
+          <tfoot>
+            <tr>
+              <td><strong> Total :</strong></td>
+              <td><strong id="cartTotal"></strong></td>
+            </tr>
+          </tfoot>
+
+        </table>
+        <button class="button-horiz" data-bs-toggle="modal" data-bs-target="#makeOrder">Make order</button>
+      </div>
+    </section>
+
+    <section class="section4 modal fade" id="makeOrder" tabindex="-1" aria-labelledby="makeOrderLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Your Order</h5>
+            <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form action="" method="post" class="modal-body form-group">
+            <div class="group">
+              <label>Name</label>
+              <input type="text" class="input">
+            </div>
+            <div class="group">
+              <label>Address</label>
+              <input type="text" class="input" required>
+            </div>
+            <div class="group">
+              <label>E-mail:</label>
+              <input type="email" class="input" required>
+            </div>
+            <div class="group">
+              <label>Order</label>
+              <ul id="orderList" class="order-list">
+              </ul>
+
+              <strong>
+                <p id="orderTotal">Total: $0</p>
+              </strong>
+            </div>
+
+            <button class="button-horiz" id="buyBtn">Buy now!</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section5" id="aboutUs">
+      <h2 class="section-divider">About us</h2>
+      <div class="descrip-img">
+        <img class="img-cook" src="./img/img-cook.png" alt="">
+        <p class="paragraph">
+          Pizza ipsum dolor amet sausage pepperoni mayo steak chicken wing bbq chicken wing pesto bacon. Lasagna peppers
+          sausage bacon & tomato beef, bacon pizza roll garlic sauce meatball garlic parmesan bianca marinara string
+          cheese. Ham Chicago style steak chicken wing pie, philly chicken pizza roll pork meatball. Parmesan thin crust
+          ranch chicken pizza meat lovers fresh tomatoes.
+        </p>
+
+      </div>
+    </section>
+
+    <section class="section6" id="contactUsSection">
+      <h2 class="section-divider">Contact us</h2>
+      <form action="">
+        <div class="group">
+          <label>Name</label>
+          <input type="text" class="input">
+        </div>
+        <div class="group">
+          <label>E-mail:</label>
+          <input type="email" class="input" required>
+        </div>
+        <div class="group">
+          <label for="message">Message:</label>
+          <textarea name="message" idmessage cols="30" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="button-horiz">Send message</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <div class="news-letter">
+    </div>
+    <div class="social-media"></div>
+
+
+
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+  </script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

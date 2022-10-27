@@ -252,7 +252,7 @@ buyBtn.addEventListener('click',(e) =>{
       buyBtn.innerHTML = `Thank you`
       sendOrder()
       
-      window.location.href="/index.html"
+      window.location.href="/"
 
     }, 3000);
 

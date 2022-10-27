@@ -26,9 +26,9 @@ let userPizzaCounter = 0;
 let total = 0
 document.getElementById('cartTotal').innerHTML = `$${total}`
 
-if (cart.length===0) {
-  document.getElementById('cart').innerHTML = `<p>No items added yet</p>`
-}
+// if (cart.length===0) {
+//   document.getElementById('cart').innerHTML = `<p>No items added yet</p>`
+// }
 function loadCards(){
   let stdPizzBox = document.getElementById('standard-pizzas-box')
   let htmlCards=''
@@ -240,7 +240,7 @@ function loadCartAndOrderList() {
 
 const buyBtn = document.getElementById('buyBtn')
 buyBtn.addEventListener('click',(e) =>{
-  
+  e.preventDefault()
   if (cart.length>0) {
     buyBtn.innerHTML = `
                         <div class="spinner-border" role="status">
@@ -251,7 +251,8 @@ buyBtn.addEventListener('click',(e) =>{
       buyBtn.style.background='blue'
       buyBtn.innerHTML = `Thank you`
       sendOrder()
-      window.location.reload()
+      
+      window.location.href="/index.html"
 
     }, 3000);
 
